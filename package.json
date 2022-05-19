@@ -25,5 +25,9 @@
         "vue": "^2.5.17",
         "vue-loader": "^15.9.6",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-build-decoupled-document": "^34.0.0",
+        "@ckeditor/ckeditor5-vue2": "^3.0.1"
     }
 }
