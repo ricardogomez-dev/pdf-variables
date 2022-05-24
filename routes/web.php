@@ -8,7 +8,6 @@ Route::get('/test', function(){
     return Inertia::render('CreateDocument');
 });
 
-Route::get('/pdf', [App\Http\Controllers\PdfController::class, 'index'])->name('pdf');
 Route::post('/download-pdf', [App\Http\Controllers\PdfController::class, 'download_pdf'])->name('download_pdf');
 
 /*

@@ -3,6 +3,7 @@
 		<div class="flex my-10">
 			<button @click="addVariable('company')" class="rounded-lg bg-blue-400 text-white px-2 py-1 font-semibold mr-5">Company</button>
 			<button @click="addVariable('customer')" class="rounded-lg bg-blue-400 text-white px-2 py-1 font-semibold">Customer</button>
+            <button type="button" @click="downloadPdf()" style="margin-left: 20px;" class="rounded-lg bg-blue-400 text-white px-2 py-1 font-semibold mr-5">Download PDF</button>
 		</div>
         <div class="document-editor">
             <div class="document-editor__editable-container">
@@ -14,7 +15,7 @@
 
 <script>
 	import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
-
+    import axios from 'axios';
 	export default {
 		data(){
 			return {
@@ -30,6 +31,18 @@
 				    writer.insertText(variable, this.CKEditor.model.document.selection.getFirstPosition());
 				});
 	    	},
+            downloadPdf(){
+                let token = document.querySelector("head meta[name='csrf-token']").getAttribute("content");
+
+                axios.post("/download-pdf", {"_token":token, 'content': this.documentTemplate}).then((response)=>{
+                    let link = response.data;
+                    var a = document.createElement('a');
+                    a.href=link;
+                    a.target = '_blank';
+                    document.body.appendChild(a);
+                    a.click();
+                });
+            },
             onReady(editor){
             	this.CKEditor = editor
                 editor.ui.getEditableElement().parentElement.insertBefore(

@@ -15,7 +15,7 @@
         "@tailwindcss/forms": "^0.2.1",
         "@tailwindcss/typography": "^0.3.0",
         "autoprefixer": "^10.0.2",
-        "axios": "^0.21",
+        "axios": "^0.21.4",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "portal-vue": "^2.1.7",
@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-decoupled-document": "^34.0.0",
-        "@ckeditor/ckeditor5-vue2": "^3.0.1"
+        "@ckeditor/ckeditor5-vue2": "^3.0.1",
+        "vue-axios": "^3.4.1"
     }
 }
