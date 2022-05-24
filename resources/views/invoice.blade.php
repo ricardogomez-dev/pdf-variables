@@ -1,0 +1,1 @@
+<h1>{{ $data['name'] }} {{ $data['last_name'] }}</h1>

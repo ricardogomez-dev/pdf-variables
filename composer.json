@@ -9,6 +9,8 @@
         "barryvdh/laravel-snappy": "^1.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "h4cc/wkhtmltoimage-amd64": "0.12.x",
+        "h4cc/wkhtmltopdf-amd64": "0.12.x",
         "inertiajs/inertia-laravel": "^0.3.5",
         "laravel/framework": "^8.75",
         "laravel/jetstream": "2.1.4",
